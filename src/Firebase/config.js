@@ -1,10 +1,10 @@
 import { initializeApp } from "firebase/app";
-import { getAuth , browserSessionPersistence} from "firebase/auth";
+import { setPersistence, getAuth , browserSessionPersistence} from "firebase/auth";
 import { getStorage } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD8-XTS4UbfHWc0A8zz3UjVgFmD0E_frAw",
+  apiKey: import.meta.env.VITE_api_key,
   authDomain: "reactchat-1139c.firebaseapp.com",
   projectId: "reactchat-1139c",
   storageBucket: "reactchat-1139c.appspot.com",
@@ -13,7 +13,20 @@ const firebaseConfig = {
 };
 
 export const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
+const auth = getAuth(app);
 export const storage = getStorage(app);
 export const db = getFirestore(app);
-auth.setPersistence(browserSessionPersistence.NONE);
+
+async function Persistence() {
+  try {
+    await setPersistence(auth,browserSessionPersistence);
+    console.log("Session persistence set to SESSION");
+  } catch (error) {
+    console.error("Error setting persistence:", error);
+  }
+}
+
+// Call the function to set persistence
+Persistence();
+
+export {auth};

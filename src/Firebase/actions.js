@@ -25,6 +25,7 @@ import { setChatRoms } from "../redux/chat/chatSlice";
 import { resizeImage } from "../utils";
 
 export const registerUserToFirebase = async (email, password) => {
+
   try {
     const userCredential = await createUserWithEmailAndPassword(
       auth,

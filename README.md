@@ -37,9 +37,6 @@ This project is a chat application developed with React, Firebase, Tailwind and 
 
 1. Clone the repository to your local machine:
 
-    ```bash
-    git clone https://github.com/ferhatkplnn/react-firebase-chat-app.git
-    ```
 
 2. Navigate to the project directory:
 
@@ -57,14 +54,6 @@ This project is a chat application developed with React, Firebase, Tailwind and 
 
     Add your Firebase web app configuration to the `.env` file:
 
-    ```env
-    VITE_FIREBASE_API_KEY=your_api_key
-    VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
-    VITE_FIREBASE_PROJECT_ID=your_project_id
-    VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-    VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
-    VITE_FIREBASE_APP_ID=your_app_id
-    ```
 
 5. Start the application:
 
@@ -82,6 +71,3 @@ This project is a chat application developed with React, Firebase, Tailwind and 
 5. Push your branch to the main repository: `git push origin new-feature`
 6. Create a pull request.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
