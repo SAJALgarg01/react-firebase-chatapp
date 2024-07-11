@@ -32,15 +32,15 @@ const Login = () => {
   return (
     <div className="bg-gradient-to-br from-blue-400 to-sky-300 min-h-screen flex items-center justify-center">
       {isPending && <LoadingSpin className="absolute" />}
-      <div className="bg-white py-8 px-6 md:px-10 rounded-lg shadow-lg flex flex-col gap-4 items-center w-full max-w-md md:max-w-lg">
+      <div className="bg-white py-8 px-6 md:px-10 rounded-lg shadow-lg flex flex-col gap-4 items-center w-full md:w-auto max-w-md md:max-w-lg">
         <h1 className="text-neutral-800 font-bold text-4xl mb-4">Logo</h1>
         <h4 className="text-neutral-700 text-lg mb-6">Login</h4>
         <form
           onSubmit={handleSubmit}
           className="flex flex-col gap-6 w-full max-w-md"
         >
-          <Input placeholder="Email" type="email" />
-          <Input placeholder="Password" type="password" />
+          <Input className="" placeholder="Email" type="email" required/>
+          <Input className ="" placeholder="Password" type="password" required/>
           <Button
             className="bg-blue-500 hover:bg-blue-600 text-white"
             text="Sign In"
