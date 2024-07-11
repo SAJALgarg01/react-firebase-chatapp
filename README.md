@@ -1,5 +1,6 @@
-# Chat Application 
+# ChitChat Application 
 
+<<<<<<< HEAD
 [DEMO](https://react-firebase-chat-app-vv.netlify.app/)
 
 This project is a chat application developed with React, Firebase, Tailwind and Redux., Users can sign in, register, find friends, and engage in chat conversations with the ability to share images.
@@ -71,3 +72,5 @@ This project is a chat application developed with React, Firebase, Tailwind and 
 5. Push your branch to the main repository: `git push origin new-feature`
 6. Create a pull request.
 
+=======
+>>>>>>> e78438a78d4245e8337ba7d49d596769d775dea6
