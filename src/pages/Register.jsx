@@ -25,10 +25,14 @@ const Register = () => {
     const password = e.target[2].value;
     const file = e.target[3].files[0];
 
+
     try {
       const user = await registerUserToFirebase(email, password);
 
-      if (!user) return;
+      if (!user){
+        setIsPending(false);
+        return;
+      } 
 
       const photoURL = await updateProfileImageToFirebase(file, user.uid);
       await updateUserProfileToFirebase({
@@ -45,7 +49,9 @@ const Register = () => {
       navigate("/");
       setIsPending(false);
     } catch (error) {
+      
       handleFirebaseError(error);
+      setIsPending(false);
     }
   };
 
@@ -86,10 +92,10 @@ const Register = () => {
     //     </p>
     //   </div>
     // </div>
-    <div className="relative bg-gradient-to-br from-blue-400 to-sky-300 min-h-screen flex items-center justify-center">
+    <div className="relative bg-gradient-to-br from-amber-900 to-amber-700 min-h-screen flex items-center justify-center">
       {isPending && <LoadingSpin className="absolute" />}
       <div className="bg-white py-8 px-6 md:px-12 rounded-lg flex flex-col gap-4 md:gap-6 items-center shadow-lg w-full md:w-auto max-w-md md:max-w-lg">
-        <h1 className="text-neutral-800 font-bold text-3xl md:text-4xl">Logo</h1>
+        <h1 className="text-neutral-800 font-bold text-3xl md:text-4xl">ChitChat</h1>
         <h4 className="text-neutral-700 text-lg">Register</h4>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
           <Input placeholder="Enter your display name" type="text" />

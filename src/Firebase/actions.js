@@ -4,6 +4,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   updateProfile,
+  sendPasswordResetEmail
 } from "firebase/auth";
 import { auth, db, storage } from "./config";
 import { handleFirebaseError } from "./errorHandle";
@@ -52,6 +53,17 @@ export const registerUserToFirebase = async (email, password) => {
 //     return false;
 //   }
 // };
+
+export const sendPasswordResetEmailToFirebase = async (email) => {
+  try {
+    await sendPasswordResetEmail(auth, email);
+    toast.success("Password reset email sent!");
+    return true;
+  } catch (error) {
+    handleFirebaseError(error);
+    return false;
+  }
+};
 
 export const updateProfileImageToFirebase = async (file) => {
   if (!file) return null;

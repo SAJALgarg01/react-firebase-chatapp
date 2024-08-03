@@ -20,7 +20,7 @@ const ChatListItem = ({ user, userChatId }) => {
   return (
     <div
       onClick={handleClick}
-      className={`flex p-2 sm:p-3 items-center gap-3 text-white hover:bg-black/40 cursor-pointer transition duration-300 ${
+      className={`flex max-sm:flex-col p-2 sm:p-3 items-center gap-3 text-white hover:bg-black/40 cursor-pointer transition duration-300 ${
         isCurrentChat ? "bg-black/40" : ""
       }`}
     >
@@ -29,16 +29,16 @@ const ChatListItem = ({ user, userChatId }) => {
         src={user?.photoURL || photo}
         alt=""
       />
-      <div className="max-sm:hidden flex justify-between items-center w-full">
+      <div className="flex justify-between items-center w-full">
         <div>
-          <span className="font-bold text-lg hover:underline ">
+          <span className="font-bold text-lg hover:underline max-sm:text-sm line-clamp-1 break-all">
             {user?.displayName}
           </span>
-          <p className="text-slate-300 text-xs line-clamp-1 break-all">
+          <p className="max-sm:hidden text-slate-300 text-xs line-clamp-1 break-all">
             {chat?.chatList.slice(-1)[0]?.message}
           </p>
         </div>
-        <p className="text-xs text-slate-300 text-nowrap">
+        <p className="max-sm:hidden text-xs text-slate-300 text-nowrap">
           {new Date(chat?.chatList.slice(-1)[0]?.time).toLocaleTimeString([], {
             hour: "2-digit",
             minute: "2-digit",

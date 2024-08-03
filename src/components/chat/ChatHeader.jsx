@@ -10,7 +10,7 @@ export const ChatHeader = ({ photoURL, displayName }) => (
         alt=""
         className="rounded-full h-12 w-12 max-sm:h-8 max-sm:w-8 object-cover object-center"
       />
-      <span className="font-medium text-slate-100 text-lg sm:text-xl">
+      <span className="font-medium text-slate-100 text-lg sm:text-xl line-clamp-1 break-all">
         {displayName}
       </span>
     </div>

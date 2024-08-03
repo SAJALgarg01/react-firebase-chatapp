@@ -17,16 +17,16 @@ const auth = getAuth(app);
 export const storage = getStorage(app);
 export const db = getFirestore(app);
 
-async function Persistence() {
-  try {
-    await setPersistence(auth,browserSessionPersistence);
-    console.log("Session persistence set to SESSION");
-  } catch (error) {
-    console.error("Error setting persistence:", error);
-  }
-}
+// async function Persistence() {
+//   try {
+//     await setPersistence(auth,browserSessionPersistence);
+//     console.log("Session persistence set to SESSION");
+//   } catch (error) {
+//     console.error("Error setting persistence:", error);
+//   }
+// }
 
-// Call the function to set persistence
-Persistence();
+// // Call the function to set persistence
+// Persistence();
 
 export {auth};

@@ -19,7 +19,7 @@ const ChatInput = ({ scrollRef }) => {
   const handleSubmit = async (event) => {
     setIsPending(true);
     event.preventDefault();
-    if (!input && !imgFile) return;
+    if (!input && !imgFile) {setIsPending(false);return;}
     setInput("");
 
     try {

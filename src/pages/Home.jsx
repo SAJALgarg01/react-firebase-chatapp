@@ -3,7 +3,7 @@ import Chat from "../components/chat/Chat";
 
 const Home = () => {
   return (
-    <div className="bg-gradient-to-br from-blue-400 to-sky-300 min-h-screen flex items-center justify-center">
+    <div className="bg-gradient-to-br from-amber-900 to-amber-700 min-h-screen flex items-center justify-center">
       <div className="bg-white shadow-lg w-screen h-screen flex">
         <SideBar />
         <Chat />
