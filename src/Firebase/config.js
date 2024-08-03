@@ -3,6 +3,7 @@ import { setPersistence, getAuth , browserSessionPersistence} from "firebase/aut
 import { getStorage } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
 
+// console.log(api);
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_api_key,
   authDomain: "reactchat-1139c.firebaseapp.com",
